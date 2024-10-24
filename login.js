@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { SafeAreaView } from 'react-native-web';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, SafeAreaView } from 'react-native';
 
-const LoginScreen = () => {
+export default function LoginScreen ({navigation}) {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.container}>
@@ -28,7 +27,7 @@ const LoginScreen = () => {
         <TouchableOpacity style={styles.loginBtn}>
           <Text style={styles.loginText}>Login</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.loginBtn1}>
+        <TouchableOpacity style={styles.loginBtn1} onPress={() => navigation.navigate('Cadastro')}>
           <Text style={styles.loginText}>Cadastro</Text>
         </TouchableOpacity>
       </View>
@@ -96,4 +95,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
